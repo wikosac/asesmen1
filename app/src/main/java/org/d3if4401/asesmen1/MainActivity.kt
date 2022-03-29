@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if4401.asesmen1.databinding.ActivityMainBinding
 
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val rv: RecyclerView = findViewById(R.id.rv)
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = MainAdapter(getData())
     }
 
     private fun getData(): List<Item> {
