@@ -21,28 +21,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        with(binding.rv) {
-//            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
-//            adapter = MainAdapter(getData())
-//            setHasFixedSize(true)
-//        }
+        with(binding.rv) {
+            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
+            adapter = MainAdapter(getData())
+            setHasFixedSize(true)
+        }
 
-        val navView: BottomNavigationView = binding.navView
+//        val navView: BottomNavigationView = binding.navView
+//
+//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+//        // Passing each menu ID as a set of Ids because each
+//        // menu should be considered as top level destinations.
+//        val appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+//            )
+//        )
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+//        navView.setupWithNavController(navController)
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-
-        val rv: RecyclerView = findViewById(R.id.rv)
-        rv.layoutManager = LinearLayoutManager(this)
-        rv.adapter = MainAdapter(getData())
+//        val rv: RecyclerView = findViewById(R.id.rv)
+//        rv.layoutManager = LinearLayoutManager(this)
+//        rv.adapter = MainAdapter(getData())
     }
 
     private fun getData(): List<Item> {
