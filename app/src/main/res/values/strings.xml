@@ -6,5 +6,7 @@
     <string name="valurt">Valurt</string>
     <string name="vior">Vior</string>
     <string name="iwso">iwso</string>
-    <string name="cari">Cari..</string>
+    <string name="cari">Judul, penulis, genre</string>
+    <string name="blank">"Hasil Pencarian: "</string>
+
 </resources>

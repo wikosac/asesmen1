@@ -1,6 +1,7 @@
 package org.d3if4401.asesmen1
 
 import android.os.Bundle
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
+        binding.btnSearch.setOnClickListener { validate() }
+
 //        val navView: BottomNavigationView = binding.navView
 //
 //        val navController = findNavController(R.id.nav_host_fragment_activity_main)
@@ -43,6 +46,16 @@ class MainActivity : AppCompatActivity() {
 //        val rv: RecyclerView = findViewById(R.id.rv)
 //        rv.layoutManager = LinearLayoutManager(this)
 //        rv.adapter = MainAdapter(getData())
+    }
+
+    private fun validate() {
+        val hasil = "Hasil Pencarian: "
+        val key = binding.keyword.text.toString()
+
+        if (key == null || key.trim() == "")
+            Toast.makeText(this@MainActivity, "Tidak ada hasil", Toast.LENGTH_SHORT).show()
+        else
+            binding.textBase.setText(hasil + key)
     }
 
     private fun getData(): List<Item> {
